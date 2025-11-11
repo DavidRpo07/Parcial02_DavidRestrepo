@@ -1,0 +1,3 @@
+**¿Cómo se integraría con un servicio que almacene el historial de cálculos en una base de datos externa?**
+
+- El microservicio enviaría una petición HTTP POST al servicio externo que se encarga de almacenar los cálculos en la base de datos. Esta comunicación se realizaría después de calcular la respuesta y mostrarsela al cliente, esto no afectaría la respuesta al cliente,  manteniendo el diseño desacoplado. Si el servicio de historial falla, el microservicio debe seguir funcionando normalmente, registrando en un log el fallo o error. La dirección del servicio externo se configuraría mediante variables de entorno para facilitar el despliegue en distintos entornos.
